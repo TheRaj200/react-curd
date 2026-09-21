@@ -16,6 +16,7 @@ const App = () => {
     }
 
   }
+  
   const handleEditTask = (task) => {
     
               const newTitle = prompt('Enter new title', task.title)
