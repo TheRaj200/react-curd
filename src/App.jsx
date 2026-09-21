@@ -16,7 +16,7 @@ const App = () => {
     }
 
   }
-  
+
   const handleEditTask = (task) => {
     
               const newTitle = prompt('Enter new title', task.title)
@@ -54,9 +54,8 @@ const App = () => {
       <h2 className='text-lg font-semibold text-center py-10'>Tasks List</h2>
       
       <ol className='flex flex-col gap-4 justify-center items-center '>
-        {tasks.map((task) => (
-         
-         
+       
+        { tasks ? tasks.map((task) => (
          <li key={task.id} className='border border-gray-300 p-4 rounded-lg shadow-sm w-[50%] flex   flex-col gap-2 bg-gray-100 justify-center items-center'>
             <h3 className='text-md font-bold'>  {task.title}</h3>
             <p className='text-sm text-gray-600'>{task.details}</p>
@@ -65,7 +64,7 @@ const App = () => {
             <button className='bg-red-500 text-white h-[40px] w-[90px] px-6 py-2 rounded-lg hover:bg-red-600 cursor-pointer flex justify-content items-center' onClick={() => deleteTask(task.id)}>Delete</button>
            </div>
           </li>
-        ))}
+        )) : <div>empty</div>}
       </ol>
     </section>
     </div>
